@@ -1,6 +1,6 @@
 using System;
 using System.Text;
-
+using System.IO;
 namespace Baekjoon
 {
     class Program
@@ -13,11 +13,10 @@ namespace Baekjoon
 
             for (int i = 0; i < count; i++)
             {
-                nums = Console.ReadLine().Split(' ');
-                answer.Append((int.Parse(nums[0]) + int.Parse(nums[1])).ToString() + "\n");
+                nums = new StringReader(Console.ReadLine()).ReadLine().Split(' ');
+                answer.AppendLine( (int.Parse(nums[0]) + int.Parse(nums[1])).ToString() );
             }
-
-            Console.WriteLine(answer);            
+            Console.WriteLine(answer);
         }
     }
 }
