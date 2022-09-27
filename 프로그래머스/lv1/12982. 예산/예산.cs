@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-using System;
 using System.Collections.Generic;
 
 public class Solution {
@@ -8,13 +7,10 @@ public class Solution {
         int answer = 0;
         Array.Sort(d);
         List<int> list = d.ToList();
-        int sum = 0;
         
         for (int i = list.Count-1; i >= 0; i --){
-            sum = list.Sum();
-            
-            if(sum <= budget){
-                return list.Count;
+            if(list.Sum() <= budget){
+                return i+1; 
             }else{
                 list.RemoveAt(i);
             }
