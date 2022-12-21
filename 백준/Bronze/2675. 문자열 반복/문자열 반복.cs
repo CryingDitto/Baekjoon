@@ -1,27 +1,18 @@
-using System;
 using System.Text;
-namespace Baekjoon
+StringBuilder sb = new StringBuilder();
+int num = int.Parse(Console.ReadLine());
+for(int i=0; i<num; i++)
 {
-    class Program
+    string[] input = Console.ReadLine().Split(' ');
+    foreach(var c in input[1])
     {
-        static void Main(string[] args)
+        int jCount = int.Parse(input[0]);
+        for (int j=0; j< jCount; j++)
         {
-            int T = int.Parse(Console.ReadLine());
-            StringBuilder sb = new StringBuilder();
-            for (int t = 0; t<T; t++)
-            {
-                string[] inputs = Console.ReadLine().Split(' ');
-
-                foreach (var s in inputs[1])
-                {
-                    for (int i = 0; i < int.Parse(inputs[0]); i++)
-                    {
-                        sb.Append(s);
-                    }
-                }
-                Console.WriteLine(sb);
-                sb.Clear();
-            }            
+            sb.Append(c);
         }
+
     }
+    Console.WriteLine(sb);
+    sb.Clear();
 }
