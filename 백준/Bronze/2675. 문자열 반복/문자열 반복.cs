@@ -1,18 +1,19 @@
 using System.Text;
+int test = int.Parse(Console.ReadLine());
 StringBuilder sb = new StringBuilder();
-int num = int.Parse(Console.ReadLine());
-for(int i=0; i<num; i++)
+for(int i=0; i<test; i++)
 {
     string[] input = Console.ReadLine().Split(' ');
-    foreach(var c in input[1])
+    int printCount = int.Parse(input[0]);
+    for (int j=0; j<input[1].Length; j++)
     {
-        int jCount = int.Parse(input[0]);
-        for (int j=0; j< jCount; j++)
-        {
-            sb.Append(c);
-        }
+        char s = input[1][j];
 
+        for(int k=0; k<printCount; k++)
+        {
+            sb.Append(s);
+        }
     }
-    Console.WriteLine(sb);
+    Console.WriteLine(sb.ToString());
     sb.Clear();
 }
