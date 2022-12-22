@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
 
+string s = Console.ReadLine();
+
 Dictionary<string, int> dict = new Dictionary<string, int>();
 
 dict.Add("ABC", 3);
@@ -12,18 +14,17 @@ dict.Add("PQRS", 8);
 dict.Add("TUV", 9);
 dict.Add("WXYZ", 10);
 
-string input = Console.ReadLine();
 int sum = 0;
-foreach (var s in input)
+foreach(var ch in s)
 {
-    foreach (var key in dict.Keys)
+    foreach(var key in dict.Keys)
     {
-        if (key.Contains(s))
+        if (key.Contains(ch))
         {
             sum += dict[key];
             break;
         }
     }
-
 }
+
 Console.WriteLine(sum);
